@@ -1,0 +1,48 @@
+{
+  "statusCode": 200,
+  "statusMessage": "Success",
+  "Channel": [
+    {
+      "id": 1,
+      "name": "ABC News",
+      "code": "abc-news",
+      "image": "https://s.abcnews.com/assets/images/apple-touch-icons/touch-icon-ipad-retina.png"
+    },
+    {
+      "id": 2,
+      "name": "ABC News (AU)",
+      "code": "abc-news-au",
+      "image": "https://mobile.abc.net.au/homepage/mobile/images/homepage/apple-touch-icon-144x144.png"
+    },
+    {
+      "id": 3,
+      "name": "Aftenposten",
+      "code": "aftenposten",
+      "image": "https://www.aftenposten.no/public/apple-touch-icon-120x120.png"
+    },
+    {
+      "id": 4,
+      "name": "Al Jazeera English",
+      "code": "al-jazeera-english",
+      "image": "https://www.aljazeera.com/mritems/assets/images/touch-icon-iphone-retina.png"
+    },
+    {
+      "id": 5,
+      "name": "ANSA.it",
+      "code": "ansa",
+      "image": "http://www.ansa.it/sito/img/ico/ansa-144-precomposed.png"
+    },
+    {
+      "id": 6,
+      "name": "Argaam",
+      "code": "argaam",
+      "image": "https://www.argaam.com/apple-touch-icon-precomposed.png"
+    },
+    {
+      "id": 7,
+      "name": "Ars Technica",
+      "code": "ars-technica",
+      "image": "http://cdn.arstechnica.net/apple-touch-icon.png"
+    }
+  ]
+}
