@@ -11,8 +11,18 @@ public class NewsSourceResponse implements Serializable {
     private int statusCode;
     @SerializedName("statusMessage")
     private String statusMessage;
-    @SerializedName("Channel")
+    @SerializedName("type")
+    private String type;
+    @SerializedName("Source")
     private ArrayList<Channels> channels;
+
+    public String getType () {
+        return type;
+    }
+
+    public void setType (String type) {
+        this.type = type;
+    }
 
     public int getStatusCode () {
         return statusCode;

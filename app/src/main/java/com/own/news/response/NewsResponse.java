@@ -39,7 +39,7 @@ public class NewsResponse implements Serializable {
         this.articlesArrayList = articlesArrayList;
     }
 
-    class Articles implements Serializable {
+    public class Articles implements Serializable {
 
         @SerializedName("source")
         private Source source;
@@ -129,12 +129,12 @@ public class NewsResponse implements Serializable {
             this.content = content;
         }
 
-        class Source implements Serializable {
+        public class Source implements Serializable {
 
             @SerializedName("id")
-            String id;
+            public String id;
             @SerializedName("name")
-            String name;
+            public String name;
 
             public String getId () {
                 return id;
@@ -142,6 +142,14 @@ public class NewsResponse implements Serializable {
 
             public void setId (String id) {
                 this.id = id;
+            }
+
+            public String getName () {
+                return name;
+            }
+
+            public void setName (String name) {
+                this.name = name;
             }
         }
     }

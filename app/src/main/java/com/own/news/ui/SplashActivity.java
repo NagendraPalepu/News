@@ -22,7 +22,7 @@ public class SplashActivity extends Activity {
     private Runnable runnable = new Runnable () {
         @Override
         public void run () {
-            Intent intent = new Intent (SplashActivity.this, MainActivity.class);
+            Intent intent = new Intent (SplashActivity.this, NewMainActivity.class);
             startActivity (intent);
             finish ();
         }

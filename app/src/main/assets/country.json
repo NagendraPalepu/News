@@ -1,0 +1,49 @@
+{
+  "statusCode": 200,
+  "statusMessage": "Success",
+  "type": "co",
+  "Source": [
+    {
+      "id": 1,
+      "name": "India",
+      "code": "in",
+      "image": "https://newsapi.org/images/flags/in.svg"
+    },
+    {
+      "id": 2,
+      "name": "America",
+      "code": "us",
+      "image": "https://newsapi.org/images/flags/us.svg"
+    },
+    {
+      "id": 3,
+      "name": "Canada",
+      "code": "ca",
+      "image": "https://newsapi.org/images/flags/ca.svg"
+    },
+    {
+      "id": 4,
+      "name": "Australia",
+      "code": "au",
+      "image": "https://newsapi.org/images/flags/au.svg"
+    },
+    {
+      "id": 5,
+      "name": "China",
+      "code": "cn",
+      "image": "https://newsapi.org/images/flags/cn.svg"
+    },
+    {
+      "id": 6,
+      "name": "Russia",
+      "code": "ru",
+      "image": "https://newsapi.org/images/flags/ru.svg"
+    },
+    {
+      "id": 7,
+      "name": "United Kingdom",
+      "code": "gb",
+      "image": "https://newsapi.org/images/flags/gb.svg"
+    }
+  ]
+}

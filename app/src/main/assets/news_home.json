@@ -1,7 +1,8 @@
 {
   "statusCode": 200,
   "statusMessage": "Success",
-  "Channel": [
+  "type": "so",
+  "Source": [
     {
       "id": 1,
       "name": "ABC News",
