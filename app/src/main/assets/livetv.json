@@ -6,32 +6,51 @@
     {
       "id": 1,
       "name": "ABN",
+      "language":"te",
       "code": "2fsYVdLkwWE",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZqGrKkzpOEuoETlUyy56oh2sWQkr76OyA6Wj-U5PP7AGpaLY"
+      "image": "https://i.ytimg.com/vi/2fsYVdLkwWE/hqdefault.jpg"
     },
     {
       "id": 2,
       "name": "ETV",
+      "language":"te",
       "code": "Zly_M5lH5WQ",
-      "image": "https://yt3.ggpht.com/a-/AAuE7mCMKkZCtLjDR5ArL_Z7XufqqBJfLOB12ib7mg=s900-mo-c-c0xffffffff-rj-k-no"
+      "image": "https://i.ytimg.com/vi/Zly_M5lH5WQ/hqdefault.jpg"
     },
     {
       "id": 3,
       "name": "Tv 9",
+      "language":"te",
       "code": "1d1DAIZGqmE",
-      "image": "https://image3.mouthshut.com/images/imagesp/925599335s.png"
+      "image": "https://i.ytimg.com/vi/1d1DAIZGqmE/hqdefault.jpg"
     },
     {
       "id": 4,
       "name": "Tv 5",
+      "language":"te",
       "code": "Dh1xZJmjsnI",
-      "image": "https://yt3.ggpht.com/a-/AAuE7mAu4dbhiRviuG3vkPqKJe5hagRKo8PpZlkH_g=s900-mo-c-c0xffffffff-rj-k-no"
+      "image": "https://i.ytimg.com/vi/Dh1xZJmjsnI/hqdefault.jpg"
     },
     {
       "id": 5,
       "name": "Sakshi",
-      "code": "6Pp9cQ3ZTqE",
-      "image": "https://yt3.ggpht.com/a-/AAuE7mDtPwsMLpZNmO7RzFEyQXTqcXUcykQQz4mOVw=s900-mo-c-c0xffffffff-rj-k-no"
+      "language":"te",
+      "code": "66gw5U9QgHg",
+      "image": "https://i.ytimg.com/vi/66gw5U9QgHg/hqdefault.jpg"
+    },
+    {
+      "id": 6,
+      "name": "NDTV",
+      "language":"En",
+      "code": "YmqPvQef_wo",
+      "image": "https://cdn.ndtv.com/static/images/ndtv_default_image_livetv.png"
+    },
+    {
+      "id": 7,
+      "name": "NDTV",
+      "language":"En",
+      "code": "YmqPvQef_wo",
+      "image": "https://i.ytimg.com/vi/NyantkXMUUY/hqdefault.jpg"
     }
   ]
 }

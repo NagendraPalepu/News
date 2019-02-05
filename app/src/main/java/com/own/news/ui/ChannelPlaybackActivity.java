@@ -2,7 +2,9 @@ package com.own.news.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.annotation.NonNull;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -10,10 +12,18 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.own.news.R;
+import com.own.news.network.API;
+import com.own.news.network.RetrofitHelper;
 import com.own.news.response.NewsSourceResponse;
+import com.own.news.response.VideoDataResponse;
 import com.own.news.utils.AppUtils;
+import com.own.news.utils.CircleImageView;
+import com.own.news.utils.ImageUtils;
 
 import androidx.annotation.Nullable;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChannelPlaybackActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
@@ -21,6 +31,9 @@ public class ChannelPlaybackActivity extends YouTubeBaseActivity implements YouT
     private YouTubePlayerView youTubeView;
 
     private NewsSourceResponse.Channels channels;
+    private CircleImageView logo;
+    private TextView title, channelChange;
+    private ImageView upImageView, downImageView;
 
 
     @Override
@@ -36,10 +49,20 @@ public class ChannelPlaybackActivity extends YouTubeBaseActivity implements YouT
             }
         }
 
+        logo = findViewById (R.id.logo);
+        title = findViewById (R.id.title);
+        channelChange = findViewById (R.id.channelChange);
+        upImageView = findViewById (R.id.upImageView);
+        downImageView = findViewById (R.id.downImageView);
+
+        title.setTypeface (AppUtils.getOpenSansSemiBold (this));
+        channelChange.setTypeface (AppUtils.getOpenSansRegular (this));
+
+
         youTubeView = findViewById (R.id.youtube_view);
         youTubeView.initialize (AppUtils.DEVELOPER_KEY, this);
 
-
+        getUrlData ();
     }
 
 
@@ -48,8 +71,8 @@ public class ChannelPlaybackActivity extends YouTubeBaseActivity implements YouT
 
         if (!wasRestored) {
 
-            player.loadVideo (channels.getCode()); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
-            player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+            player.loadVideo (channels.getCode ());
+            player.setPlayerStyle (YouTubePlayer.PlayerStyle.DEFAULT);
         }
     }
 
@@ -73,5 +96,31 @@ public class ChannelPlaybackActivity extends YouTubeBaseActivity implements YouT
 
     protected YouTubePlayer.Provider getYouTubePlayerProvider () {
         return youTubeView;
+    }
+
+    private void getUrlData () {
+        if (channels == null) {
+            return;
+        }
+
+
+        String parentUrl = API.APP_YOUTUBE_URL_REST;
+        Call<VideoDataResponse> newsResponseCall = RetrofitHelper.getCommonApi (this, parentUrl).getVideoData ("https://www.youtube.com/watch?v=" + channels.getCode (), "json");
+
+        newsResponseCall.enqueue (new Callback<VideoDataResponse> () {
+            @Override
+            public void onResponse (@NonNull Call<VideoDataResponse> call, @NonNull Response<VideoDataResponse> response) {
+                VideoDataResponse videoDataResponse = response.body ();
+                if (videoDataResponse != null) {
+                    title.setText (videoDataResponse.getTitle ());
+                    ImageUtils.loadImage (videoDataResponse.getThumbnail_url (), logo, ImageUtils.getRequestOptions (R.mipmap.ic_launcher));
+                }
+            }
+
+            @Override
+            public void onFailure (@NonNull Call<VideoDataResponse> call, @NonNull Throwable t) {
+
+            }
+        });
     }
 }
